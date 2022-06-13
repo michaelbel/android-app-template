@@ -56,48 +56,9 @@
         <activity
             android:name=".presentation.compose.ComposeActivity"/>
 
-        <provider
-            android:name="androidx.startup.InitializationProvider"
-            android:authorities="${applicationId}.androidx-startup"
-            android:exported="false"
-            tools:node="merge">
-
-            <meta-data
-                android:name="org.michaelbel.core.initializer.FirebaseCrashlyticsInitializer"
-                android:value="androidx.startup"
-                tools:node="remove"/>
-
-            <meta-data
-                android:name="org.michaelbel.template.remoteconfig.initializer.FirebaseConfigInitializer"
-                android:value="androidx.startup"
-                tools:node="remove"/>
-
-            <meta-data
-                android:name="org.michaelbel.core.initializer.TimberInitializer"
-                android:value="androidx.startup"
-                tools:node="remove"/>
-
-            <meta-data
-                android:name="org.michaelbel.template.auth.vk.VkInitializer"
-                android:value="androidx.startup"
-                tools:node="remove"/>
-
-        </provider>
-
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
             android:value="ca-app-pub-3940256099942544~3347511713"/>
-
-        <activity
-            android:name="com.facebook.CustomTabActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <category android:name="android.intent.category.BROWSABLE"/>
-                <data android:scheme="@string/fb_login_protocol_scheme"/>
-            </intent-filter>
-        </activity>
 
     </application>
 

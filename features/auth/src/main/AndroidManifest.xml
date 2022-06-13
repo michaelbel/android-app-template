@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="org.michaelbel.template.auth">
 
     <application>
@@ -8,6 +9,19 @@
         <activity
             android:name="com.facebook.FacebookActivity"
             android:configChanges="keyboard|keyboardHidden|screenLayout|screenSize|orientation"/>
+
+        <provider
+            android:name="androidx.startup.InitializationProvider"
+            android:authorities="${applicationId}.androidx-startup"
+            android:exported="false"
+            tools:node="merge">
+
+            <meta-data
+                android:name="org.michaelbel.template.auth.vk.VkInitializer"
+                android:value="androidx.startup"
+                tools:node="remove"/>
+
+        </provider>
 
         <meta-data
             android:name="com.facebook.sdk.ApplicationId"

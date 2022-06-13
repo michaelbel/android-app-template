@@ -23,22 +23,18 @@ fun AppTheme(
 ) {
     val context: Context = LocalContext.current
 
-    val dynamicColorScheme: ColorScheme = if (darkTheme) {
-        dynamicDarkColorScheme(context)
-    } else {
-        dynamicLightColorScheme(context)
-    }
-
-    val autoColorScheme: ColorScheme = if (darkTheme) {
-        DarkColorScheme
-    } else {
-        LightColorScheme
-    }
-
     val appColorScheme: ColorScheme = if (Build.VERSION.SDK_INT >= 31) {
-        dynamicColorScheme
+        if (darkTheme) {
+            dynamicDarkColorScheme(context)
+        } else {
+            dynamicLightColorScheme(context)
+        }
     } else {
-        autoColorScheme
+        if (darkTheme) {
+            DarkColorScheme
+        } else {
+            LightColorScheme
+        }
     }
 
     MaterialTheme(
