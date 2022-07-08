@@ -30,7 +30,7 @@ plugins {
     id("io.gitlab.arturbosch.detekt")
     kotlin("android")
     kotlin("kapt")
-    id("com.google.devtools.ksp") version "1.6.20-1.0.5"
+    id("com.google.devtools.ksp") version "1.7.10-1.0.6"
 }
 
 android {
